@@ -17,6 +17,8 @@ public class NativeLogPlugin extends Plugin {
         String tag = call.getString("tag", "IonicApp");
         String message = call.getString("message");
 
+        Log.d(tag, "NativeLogPlugin.log");
+
         if (message != null) {
             Log.d(tag, message);
             call.resolve();
