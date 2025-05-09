@@ -1,7 +1,7 @@
 {
-  "name": "capacitor-native-logs",
-  "version": "0.0.1",
-  "description": "Ionic capacitor plugin for native logging of messages",
+  "name": "@capacitor-community/native_log",
+  "version": "0.0.2",
+  "description": "A lightweight Capacitor plugin for native logging of messages across all platforms (iOS, Android, and Web)",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -11,7 +11,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorNativeLogs.podspec"
+    "CapacitorCommunityNativeLog.podspec"
   ],
   "author": "Nishant Singh",
   "license": "MIT",
@@ -25,7 +25,13 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "logging",
+    "logs",
+    "debug",
+    "ios",
+    "android",
+    "web"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",

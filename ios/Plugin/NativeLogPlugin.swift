@@ -9,10 +9,13 @@ import Capacitor
 public class NativeLogPlugin: CAPPlugin {
     private let implementation = NativeLog()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func log(_ call: CAPPluginCall) {
+        let tag = call.getString("tag") ?? "IonicCapacitorApp"
+        guard let message = call.getString("message") else {
+            call.reject("Missing message")
+            return
+        }
+        implementation.log(tag: tag, message: message)
+        call.resolve()
     }
 }

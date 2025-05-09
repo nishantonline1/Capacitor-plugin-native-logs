@@ -14,10 +14,10 @@ public class NativeLogPlugin extends Plugin {
 
     @PluginMethod
     public void log(PluginCall call) {
-        String tag = call.getString("tag", "IonicApp");
+        String tag = call.getString("tag", "IonicCapacitorApp");
         String message = call.getString("message");
 
-        Log.d(tag, "NativeLogPlugin.log");
+        // Log.d(tag, "NativeLogPlugin.log");
 
         if (message != null) {
             Log.d(tag, message);
@@ -25,14 +25,5 @@ public class NativeLogPlugin extends Plugin {
         } else {
             call.reject("Missing message");
         }
-    }
-
-    @PluginMethod
-    public void echo(PluginCall call) {
-        String value = call.getString("value");
-
-        JSObject ret = new JSObject();
-        ret.put("value", implementation.echo(value));
-        call.resolve(ret);
     }
 }
